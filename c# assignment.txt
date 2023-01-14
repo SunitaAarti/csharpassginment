@@ -1,0 +1,462 @@
+namespace Assignment
+{
+    class Fibonacci
+    {
+        public static void Main(string[] args)
+        {
+            int val1 = 0, val2 = 1, val3, i, n;
+            n = 7;
+            Console.WriteLine("Fibonacci series:");
+            Console.Write(val1 + " " + val2 + " ");
+            for (i = 2; i < n; ++i)
+            {
+                val3 = val1 + val2;
+                Console.Write(val3 + " ");
+                val1 = val2;
+                val2 = val3;
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------
+Fibonacci series:
+0 1 1 2 3 5 8
+
+
+=================================================================================================================================
+namespace Assignment
+{
+    class PrimeNumber
+    {
+        public static void Main(String[] args)
+        {
+            int n, i, m = 0, flag = 0;
+            Console.Write("Enter the Number to check Prime: ");
+            n = int.Parse(Console.ReadLine());
+            m = n / 2;
+            for (i = 2; i <= m; i++)
+            {
+                if (n % i == 0)
+                {
+                    Console.Write("Number is not Prime.");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+                Console.Write("Number is Prime.");
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Enter the Number to check Prime: 17  
+Number is Prime.   
+Enter the Number to check Prime: 57  
+Number is not Prime.
+
+
+
+
+
+
+
+=======================================================================================================================================
+
+class PalindromeNumber
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a Number To Check Palindrome : ");
+            int number = int.Parse(Console.ReadLine());
+            int remineder, sum = 0;
+            int temp = number;
+            while (number > 0)
+            {
+                //Get the remainder by dividing the number with 10  
+                remineder = number % 10;
+                //multiply the sum with 10 and then add the remainder
+                sum = (sum * 10) + remineder;
+                //Get the quotient by dividing the number with 10 
+                number = number / 10;
+            }
+            if (temp == sum)
+            {
+                Console.WriteLine($"Number {temp} is Palindrome.");
+            }
+            else
+            {
+                Console.WriteLine($"Number {temp} is not Palindrome");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+===================================================================================================================================
+namespace Assignment
+{
+    class Alphabet
+    {
+        public static void Main(string[] args)
+        {
+            char ch = 'a';
+            int x, y, z, w;
+            for (x = 1; x <= 5; x++)
+            {
+                for (y = 5; y >= x; y--)
+                    Console.Write(" ");
+                for (z = 1; z <= x; z++)
+                    Console.Write(ch++);
+                ch--;
+                for (w = 1; w < x; w++)
+                    Console.Write(--ch);
+                Console.Write("\n");
+                ch = 'a';
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+     a
+    aba
+   abcba
+  abcdcba
+ abcdedcba
+
+C:\Users\AARAJEND\source\repos\Assignment\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe (process 32652) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+
+
+=============================================================================================================================================
+namespace Assignment
+{
+    class Armstrong
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the maximum limit for searching");
+            int max = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= max; i++)
+            {
+                if (isArmstrong(i))
+                    Console.WriteLine(i);
+            }
+            Console.ReadLine();
+        }
+
+        static bool isArmstrong(int x)
+        {
+            int temp = x;
+            int sum = 0;
+            while (x != 0)
+            {
+                sum = sum + x % 10;
+                x = x / 10;
+            }
+
+            if (sum == temp)
+                return true;
+            else
+                return false;
+        }
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Enter the maximum limit for searching
+13
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+C:\Users\AARAJEND\source\repos\Assignment\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe (process 34508) exited with code -1073741510.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+
+
+
+
+
+
+===============================================================================================
+
+
+namespace Assignment
+{
+    class Factorial
+    {
+        public static void Main()
+        {
+            int i, f = 1, num;
+
+            Console.Write("\n\n");
+            Console.Write("Calculate the factorial of a given number:\n");
+            Console.Write("--------------------------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Input the number : ");
+            num = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= num; i++)
+                f = f * i;
+
+            Console.Write("The Factorial of {0} is: {1}\n", num, f);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+Calculate the factorial of a given number:
+--------------------------------------------
+
+Input the number : 12
+The Factorial of 12 is: 479001600
+
+C:\Users\AARAJEND\source\repos\Assignment\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe (process 22700) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+
+
+==============================================================================================================
+namespace Assignment
+{
+    class NumberTriangle
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, k, l, n;
+            Console.Write("Enter the Range=");
+            n = int.Parse(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                for (j = 1; j <= n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (k = 1; k <= i; k++)
+                {
+                    Console.Write(k);
+                }
+                for (l = i - 1; l >= 1; l--)
+                {
+                    Console.Write(l);
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------
+Enter the Range=2
+ 1
+121
+
+C:\Users\AARAJEND\source\repos\Assignment\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe (process 27856) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+
+
+
+=============================================================================================================================
+class PalindromeNumber
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a Number To Check Palindrome : ");
+            int number = int.Parse(Console.ReadLine());
+            int remineder, sum = 0;
+            int temp = number;
+            while (number > 0)
+            {
+                //Get the remainder by dividing the number with 10  
+                remineder = number % 10;
+                //multiply the sum with 10 and then add the remainder
+                sum = (sum * 10) + remineder;
+                //Get the quotient by dividing the number with 10 
+                number = number / 10;
+            }
+            if (temp == sum)
+            {
+                Console.WriteLine($"Number {temp} is Palindrome.");
+            }
+            else
+            {
+                Console.WriteLine($"Number {temp} is not Palindrome");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+
+Enter a Number To Check Palindrome : 3
+Number 3 is Palindrome.
+
+
+
+================================================================================================================
+
+namespace Assignment
+{
+    class PrimeNumber
+    {
+        public static void Main(String[] args)
+        {
+            int n, i, m = 0, flag = 0;
+            Console.Write("Enter the Number to check Prime: ");
+            n = int.Parse(Console.ReadLine());
+            m = n / 2;
+            for (i = 2; i <= m; i++)
+            {
+                if (n % i == 0)
+                {
+                    Console.Write("Number is not Prime.");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+                Console.Write("Number is Prime.");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+===============================================================================================================
+namespace Assignment
+{
+    class ReverseNumber
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a No. to reverse");
+            int Number = int.Parse(Console.ReadLine());
+            int Reverse = 0;
+            while (Number > 0)
+            {
+                int remainder = Number % 10;
+                Reverse = (Reverse * 10) + remainder;
+                Number = Number / 10;
+            }
+            Console.WriteLine("Reverse No. is {0}", Reverse);
+            Console.ReadLine();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
+
+Enter a No. to reverse
+67
+Reverse No. is 76
+
+
+
+======================================================================================================================
+
+namespace Assignment
+{
+    class SumofDigits
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the Number : ");
+            int number = int.Parse(Console.ReadLine());
+            int sum = 0, reminder;
+
+            while (number > 0)
+            {
+                reminder = number % 10;
+                sum = sum + reminder;
+                number = number / 10;
+            }
+
+            Console.WriteLine($"The Sum of Digits is : {sum}");
+            Console.ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------
+Enter the Number : 34566
+The Sum of Digits is : 24
+
+
+=================================================================================================================
+
+namespace Assignment
+{
+    class Swaptwonumbers
+    {
+        static void Main(string[] args)
+        {
+            int first, second;
+            first = 1;
+            second = 2;
+            first = first + second;
+            second = first - second;
+            first = first - second;
+            Console.WriteLine(first.ToString());
+            Console.WriteLine(second.ToString());
+            Console.ReadLine();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+
+
+Enter the Range=5
+    1
+   121
+  12321
+ 1234321
+123454321
+
+C:\Users\AARAJEND\source\repos\Assignment\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe (process 33836) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===============================================================================================================================
+
